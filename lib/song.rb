@@ -13,7 +13,7 @@ class Song
 
     sql = "pragma table_info('#{table_name}')"
 
-    table_info = DB[:conn].execute(sql)
+    table_info = DB[:conn].execute(sql)#("pragma table_info(?)", table_name)...?
     column_names = []
     table_info.each do |row|
       column_names << row["name"]
@@ -59,6 +59,3 @@ class Song
   end
 
 end
-
-
-
